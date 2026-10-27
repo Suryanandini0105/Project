@@ -1,0 +1,95 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vehicle Rental Management System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>🚗 Vehicle Rental System</h1>
+        <p>Find your perfect ride at the perfect price!</p>
+    </header>
+
+    <main>
+        <h2>Available Vehicles</h2>
+
+        <div class="vehicle-container">
+            <div class="vehicle">
+                <img src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&w=700&q=80" alt="Red car">
+                <h3>Maruti Swift</h3>
+                <p>Comfortable hatchback</p>
+                <p class="price">₹1,500 / day</p>
+                <button type="button" onclick="bookVehicle('Maruti Swift', 1500)">Book Now</button>
+            </div>
+
+            <div class="vehicle">
+                <img src="https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?auto=format&fit=crop&w=700&q=80" alt="SUV vehicle">
+                <h3>Hyundai Creta</h3>
+                <p>Spacious family SUV</p>
+                <p class="price">₹2,500 / day</p>
+                <button type="button" onclick="bookVehicle('Hyundai Creta', 2500)">Book Now</button>
+            </div>
+
+            <div class="vehicle">
+                <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=700&q=80" alt="Tata Nexon">
+                <h3>Tata Nexon</h3>
+                <p>Stylish compact SUV</p>
+                <p class="price">₹2,000 / day</p>
+                <button type="button" onclick="bookVehicle('Tata Nexon', 2000)">Book Now</button>
+            </div>
+
+            <div class="vehicle">
+                <img src="https://images.unsplash.com/photo-1563720223185-11003d516935?auto=format&fit=crop&w=700&q=80" alt="Toyota Innova">
+                <h3>Toyota Innova</h3>
+                <p>Roomy group travel vehicle</p>
+                <p class="price">₹3,000 / day</p>
+                <button type="button" onclick="bookVehicle('Toyota Innova', 3000)">Book Now</button>
+            </div>
+        </div>
+
+        <section class="booking-section" id="booking">
+            <h2>Book Your Vehicle</h2>
+
+            <form id="bookingForm">
+                <label for="customerName">Customer Name</label>
+                <input type="text" id="customerName" placeholder="Enter your full name" required>
+
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" placeholder="Enter 10-digit phone number"
+                       pattern="[0-9]{10}" maxlength="10" required>
+
+                <label for="vehicleSelect">Select Vehicle</label>
+                <select id="vehicleSelect" required>
+                    <option value="">Choose a vehicle</option>
+                    <option value="1500">Maruti Swift - ₹1,500/day</option>
+                    <option value="2500">Hyundai Creta - ₹2,500/day</option>
+                    <option value="2000">Tata Nexon - ₹2,000/day</option>
+                    <option value="3000">Toyota Innova - ₹3,000/day</option>
+                </select>
+
+                <label for="days">Number of Rental Days</label>
+                <input type="number" id="days" min="1" max="30" value="1" required>
+
+                <div class="total-box">
+                    <span>Total Rental Price:</span>
+                    <strong id="totalPrice">₹0</strong>
+                </div>
+
+                <button type="submit">Confirm Booking</button>
+            </form>
+
+            <div id="bookingResult" role="status" aria-live="polite"></div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2026 Vehicle Rental System | Student Project</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
